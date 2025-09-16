@@ -1,0 +1,19 @@
+[project]
+name = "ai_manager"
+version = "0.1.0"
+
+
+[tool.ruff]
+# Устанавливаем максимальную длину строки
+line-length = 120
+
+[tool.ruff.lint]
+# Выбираем наборы правил для проверки.
+# E/F: стандартные ошибки (pycodestyle/pyflakes)
+# I: сортировка импортов (isort)
+# B: популярные ошибки (flake8-bugbear)
+select = ["E", "F", "I", "B"]
+
+[tool.ruff.format]
+# Включаем форматер, аналог Black
+quote-style = "double"
