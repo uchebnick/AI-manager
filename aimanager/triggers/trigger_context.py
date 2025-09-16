@@ -18,7 +18,7 @@ class TriggerContext:
         """Возвращает время начала текущего цикла проверки триггеров."""
         return self._check_time
 
-    def get_k8s_manager(securl -LsSf https://astral.sh/uv/install.sh | shlf):
+    def get_k8s_manager(self):
         """Возвращает менеджер Kubernetes для управления ресурсами."""
         # TODO: Реализовать получение менеджера Kubernetes
         pass
