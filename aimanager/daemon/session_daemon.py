@@ -4,7 +4,7 @@ from aimanager.session import LLMContext
 from aimanager.utils import gen_random_string
 from aimanager.message_queue import RedisQueue
 
-class Daemon:
+class SessionDaemon:
     def __init__(self, session_id: str, context: LLMContext, queue: RedisQueue):
         self.session_id = session_id
         self.context = context
