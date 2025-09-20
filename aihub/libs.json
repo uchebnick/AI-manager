@@ -1,0 +1,12 @@
+{
+  "libraries": [
+    {
+      "name": "example-lib",
+      "version": "1.0.0",
+      "url": "https://example.com/example-lib-1.0.0.jar",
+      "sha256": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz567abc890def12",
+      "is_work": true,
+      "type": "tools"
+    }
+  ]
+}

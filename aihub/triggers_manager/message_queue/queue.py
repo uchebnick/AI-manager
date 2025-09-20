@@ -1,6 +1,7 @@
-import redis
 import json
 import time
+
+import redis
 
 
 class RedisQueue:
@@ -33,10 +34,7 @@ class RedisQueue:
         expires_at = time.time() + ttl_seconds
 
         # Упаковываем данные и время истечения в словарь
-        payload = {
-            'data': item,
-            'expires_at': expires_at
-        }
+        payload = {"data": item, "expires_at": expires_at}
 
         # Сериализуем в JSON и добавляем в начало списка (LPUSH)
         self.redis.lpush(self.queue_name, json.dumps(payload))
@@ -63,10 +61,10 @@ class RedisQueue:
             payload = json.loads(serialized_payload)
 
             # Проверяем, не истекло ли время жизни элемента
-            if time.time() < payload['expires_at']:
+            if time.time() < payload["expires_at"]:
                 # Элемент валиден, возвращаем его данные
                 print(f"🔷 Извлечен валидный элемент: {payload['data']}")
-                return payload['data']
+                return payload["data"]
             else:
                 # Элемент просрочен, он просто игнорируется
                 print(f"❌ Элемент {payload['data']} просрочен и удален.")
@@ -88,5 +86,3 @@ class RedisQueue:
         :return: True, если очередь пуста, иначе False.
         """
         return self.size() == 0
-
-

@@ -22,12 +22,12 @@ app = SimpleApp()
 
 
 # Используем наш декоратор!
-@app.get('/hello')
+@app.get("/hello")
 def say_hello():
     return "Привет, мир!"
 
 
-@app.get('/info')
+@app.get("/info")
 def get_info():
     return "Это информация о приложении."
 

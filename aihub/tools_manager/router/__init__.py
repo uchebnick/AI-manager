@@ -1,0 +1,1 @@
+from make_global import make_package_global

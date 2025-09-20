@@ -1,12 +1,14 @@
 from datetime import datetime
 
-from aimanager.message_queue import RedisQueue
+from aimanager.triggers_manager.message_queue import RedisQueue
+
 
 class TriggerContext:
     """
     Предоставляет контекст и утилиты для триггеров в момент их проверки.
     Экземпляр этого класса создается для каждого цикла проверки триггеров.
     """
+
     def __init__(self, session_id: str, lib_env: dict, queue: RedisQueue):
         self.session_id: str = session_id
         self.lib_env: dict = lib_env
